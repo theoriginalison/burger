@@ -6,6 +6,7 @@ var burger = {
             cb(res);
         });
     },
+    //start here to create the Create burger functionality
     insertOne: function (cols, vals, cb) {
         orm.insertOne("burgers", cols, vals, function (res) {
             cb(res);

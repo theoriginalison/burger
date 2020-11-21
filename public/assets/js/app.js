@@ -1,13 +1,21 @@
 $(document).on("click", ".devourBtn", function () {
     var id = $(this).data("id");
-    var newDevour = $(this).data("newDevour");
+    var newDevour = $(this).data("devour");
 
     var newDevourState = {
         devoured: newDevour
     }
 
-    $.ajax("/api/burgers")
+    $.ajax(`/api/burgers/${id}`, {
+        type: "PUT",
+        data: newDevourState
+    }).then(
+        function () {
+            console.log("changed devoured to", newDevour);
+            location.reload();
+        }
+    )
 
 })
 
-//next step: select the dataID so you know which burger to update in the API call-- make sure it is coming through for that element and has the correct id, then select it w jquery, then make your ajax call
+//create an on-click function that does the post-- look at the index.handlebars bc the button has already been created

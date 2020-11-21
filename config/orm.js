@@ -39,7 +39,7 @@ var orm = {
         });
     },
     insertOne: function (tableInput, cols, vals, cb) {
-        var queryString = `INSERT INTO ${tableInput};`;
+        var queryString = `INSERT INTO ${tableInput}`;
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
@@ -55,7 +55,10 @@ var orm = {
         });
     },
     updateOne: function (tableInput, objColVals, condition, cb) {
-        var query = `UPDATE ${tableInput};`;
+        console.log(tableInput);
+        console.log(objColVals);
+        console.log(condition);
+        var queryString = `UPDATE ${tableInput}`;
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
