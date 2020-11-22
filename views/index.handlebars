@@ -1,38 +1,44 @@
-<h1>Eat Da Burger!</h1>
+<header>
+    <h1><i class="fas fa-hamburger"></i> Eat Da Burger! <i class="fas fa-hamburger"></i></h1>
+    <iframe src="https://giphy.com/embed/yYcobj1lMONnq" width="300" frameBorder="0" class="giphy-embed"
+        allowFullScreen></iframe>
+    <p id="giphyTag"><a href="https://giphy.com/gifs/cheezburger-cat-food-yYcobj1lMONnq">via GIPHY</a></p>
+</header>
 
-<h2>Burgers Available</h2>
+<section id="listedBurgers">
+    <container class="available">
+        <h2><i class="fas fa-hamburger"></i> Burgers Available</h2>
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-    {{/each}}
-</ul>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </container>
 
-<h2>Burgers Devoured</h2>
+    <container class="devoured">
+        <h2><i class="fas fa-hamburger"></i> Burgers Devoured</h2>
 
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=true}}
-    {{/if}}
-    {{/each}}
-</ul>
+        <ul id="devouredList">
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/if}}
+            {{/each}}
+        </ul>
+    </container>
+</section>
+<section id="addBurgerSection">
+    <h2><i class="fas fa-hamburger"></i> Add a Burger!</h2>
+    <form class="create-form">
 
-<h2>Add a Burger!</h2>
-<form class="create-form">
+        <div class="form-group">
+            <label for="bu">Create a burger:</label>
+            <input type="text" id="createBurger" name="name">
+        </div>
 
-    <div class="form-group">
-        <label for="bu">Create a burger:</label>
-        <input type="text" id="createBurger" name="name">
-    </div>
-
-    {{!-- <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div> --}}
-
-    <button type="submit" class="addBurgerBtn">Add Burger</button>
-</form>
+        <button type="submit" class="addBurgerBtn">ADD THIS BURGER!</button>
+    </form>
+</section>
