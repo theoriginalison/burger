@@ -18,4 +18,20 @@ $(document).on("click", ".devourBtn", function () {
 
 })
 
-//create an on-click function that does the post-- look at the index.handlebars bc the button has already been created
+$(".create-form").on("submit", function (event) {
+    event.preventDefault();
+    var newBurger = {
+        burger_name: $("#bu").val().trim(),
+        devoured: false
+    };
+    $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+    }).then(
+        function () {
+            console.log("created new burger");
+            location.reload();
+        }
+    )
+})
+

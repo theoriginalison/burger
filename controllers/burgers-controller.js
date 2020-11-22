@@ -27,6 +27,17 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+
+router.post("/api/burgers", function (req, res) {
+    burger.insertOne([
+        "burger_name", "devoured"
+    ], [
+        req.body.burger_name, req.body.devoured
+    ], function (result) {
+        res.json({ id: result.insertId });
+    }
+    );
+});
 //complete this route that starts on 18 and look at cats.js; then the front end has to call this thing! in the app.js file-- make sure that these line up like in cats.js and catsController.js
 
 //need another router for the create-a-burger as a router.post
