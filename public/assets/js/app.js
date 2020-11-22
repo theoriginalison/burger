@@ -18,20 +18,21 @@ $(document).on("click", ".devourBtn", function () {
 
 })
 
-$(".create-form").on("submit", function (event) {
-    event.preventDefault();
-    var newBurger = {
-        burger_name: $("#bu").val().trim(),
-        devoured: false
-    };
-    $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-    }).then(
-        function () {
-            console.log("created new burger");
-            location.reload();
-        }
-    )
-})
-
+$(document).ready(function () {
+    $(".create-form").on("submit", function (event) {
+        event.preventDefault();
+        var newBurger = {
+            burger_name: $("#createBurger").val().trim(),
+            devoured: false
+        };
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                console.log("created new burger");
+                location.reload();
+            }
+        )
+    })
+});
