@@ -1,21 +1,31 @@
+/* TODO:
+Push to Heroku */
+
 body {
     padding: 0;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin: 0;
+    /* margin-left: 1em;
+    margin-right: 1em; */
     font-family: 'Nerko One', cursive;
     font-size: 1em;
     line-height: 150%;
     color: #333;
-    background: #efeee7; 
+    background: #9BEEAD; 
 }
 
 header {
     text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 
 button {
     font-family: 'Nerko One', cursive;
     font-size: 1em;
+}
+
+section {
+    background-color: #D1FBDA;
 }
 
 #giphyTag {
@@ -34,19 +44,15 @@ button {
     /* columns: auto 2; */
     border: 3px solid black;
     padding: 10px;
+    margin: 10px;
     }
-
-/* .available {
-columns: 100px 2;
-} */
 
 #devouredList {
 opacity: .5; 
 }
 
 #addBurgerSection {
-    /* columns: auto 2; */
-    margin-top: 10px;
+    margin: 10px;
     border: 3px solid black;
     padding: 10px;
     }
