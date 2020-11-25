@@ -1,5 +1,6 @@
 /* TODO:
-Push to Heroku */
+Push to Heroku 
+Finish header??*/
 
 body {
     padding: 0;
@@ -41,7 +42,6 @@ section {
 }
 
 #listedBurgers {
-    /* columns: auto 2; */
     border: 3px solid black;
     padding: 10px;
     margin: 10px;
